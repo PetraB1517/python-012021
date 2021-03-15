@@ -49,9 +49,9 @@ def uspech_zakazky(odvetvi,obrat,zeme,konference=False,newsletter=False):
   elif int(obrat) > 1000:
     body += 1
 
-  if zeme == "Česko" or "Slovensko":
+  if zeme == "Česko" or zeme == "Slovensko":
     body += 2
-  elif zeme == "Německo" or "Francie":
+  elif zeme == "Německo" or zeme == "Francie":
     body += 1
 
   if konference:
@@ -60,6 +60,7 @@ def uspech_zakazky(odvetvi,obrat,zeme,konference=False,newsletter=False):
   if newsletter:
     body +=1
 
+  #print(body)
 
   if body > 8:
     print("Šance na získání zakázky je vysoká.")
@@ -67,8 +68,6 @@ def uspech_zakazky(odvetvi,obrat,zeme,konference=False,newsletter=False):
     print("Šance na získání zakázky je malá.")
   else:
     print("Šance na získání zakázky je střední.")
-
-
 
 
 
