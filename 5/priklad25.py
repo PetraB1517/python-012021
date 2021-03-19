@@ -35,7 +35,7 @@ print(tempUS13.head())
 
 # Pro data z předchozího dotazu napiš dotaz na řádky ve městech (sloupec City) Washington a Phiadelphia.
 
-print(tempUS13[tempUS13['City'].isin(['Washington', 'Phiadelphia'])])
+print(tempUS13[tempUS13['City'].isin(['Washington', 'Philadelphia'])])
 
 
 # Dobrovolný úkol
