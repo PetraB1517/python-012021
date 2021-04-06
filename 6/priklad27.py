@@ -14,10 +14,14 @@ Následně proveď statistiku vykázaných hodin za jednotlivé kanceláře,
 tj. spočítej celkový počet hodin vykázaný zaměstnanci jednotlivých kanceláří na projekty daného zákazníka."""
 
 import pandas
+import openpyxl
 vykazy = pandas.read_csv('vykazy.csv')
 
 print(vykazy)
-print(vykazy.groupby('project')['hours'].sum())
+vykazy_usporadane = vykazy.groupby('project')['hours'].sum()
+print(vykazy_usporadane)
+
+vykazy_usporadane.to_excel("vykazy.xlsx")
 
 # Doplněk
 
