@@ -35,6 +35,7 @@ platy_unor = pandas.read_csv('platy_2021_02.csv')
 #Propoj tabulku (operace join) s platy a tabulku se zaměstnanci pomocí sloupce cislo_zamestnance.
 
 zam_plat = pandas.merge(zamestnanci, platy_unor, on=['cislo_zamestnance'])
+#zam_plat.to_csv('zam_plat.csv', index=False)
 
 #Porovnej rozměry tabulek před spojením a po spojení. Pokud nemá některý zaměstnanec plat za únor, znamená to,
 #že v naší firmě již nepracuje.
