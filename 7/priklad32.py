@@ -37,3 +37,12 @@ Vytvoř pro zadaná data podgrafy pro jednotlivá města. Načti si informace o 
 ve kterém jednotliví pracovníci pracují (to jsme již dělali v příkladu) příkladu 26.
 Následně sloupec mesto použij na rozdělení podgrafů.
 """
+import pandas
+
+import matplotlib.pyplot as plt
+
+zam_plat = pandas.read_csv('zam_plat.csv')
+zam_plat['plat'].hist(by=zam_plat['mesto'], bins=6)
+
+plt.show()
+
