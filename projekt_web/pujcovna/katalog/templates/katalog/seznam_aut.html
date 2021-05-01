@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Seznam aut:</h2>
+
+
+
+<table>
+  <tr>
+      <th> Registrační Značka</th>
+      <th>Značka a typ</th>
+      <th>Počet najetých km</th>
+      <th>Počet dnů od poslední STK</th>
+  </tr>
+    {% for Auto in object_list %}
+  <tr>
+      <td> {{Auto.registracniZnacka}}</td>
+      <td> {{Auto.znackaATyp}}</td>
+      <td> {{Auto.pocetNajetychKm}}</td>
+      <td> {{Auto.doTK}}</td>
+  </tr>
+
+    {% empty %}
+    <tr>  Momentálně nemáme v nabídce žádná auta.</tr>
+
+    {% endfor %}
+</table>
+
+<p> Odkaz na seznam  výpůjček:
+    {% url 'vypujcky' as the_url %}
+    {% if the_url %}
+    <a href="{{ the_url }}">Zde >></a>
+    {% endif %}
+</p>
+
+<p> Odkaz na seznam  zákazníků:
+    {% url 'seznam_zakazniku' as the_url %}
+    {% if the_url %}
+    <a href="{{ the_url }}">Zde >>></a>
+    {% endif %}
+</p>
+
+{% endblock %}

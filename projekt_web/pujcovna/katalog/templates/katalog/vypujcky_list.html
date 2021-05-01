@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Seznam vypůjček:</h2>
+
+<ul>
+    {% for Vypujcka in object_list %}
+    <li><span>{{Vypujcka.zakaznik}}</span>: od {{Vypujcka.datumVypucky}} do {{Vypujcka.datumVraceni}}, auto: {{Vypujcka.auto}}, cena: {{Vypujcka.cena}} Kč. {{Vypujcka.prubeh}}</li>
+    {% empty %}
+    <li> Momentálně neevidujeme žádné výpůjčky.</li>
+
+    {% endfor %}
+</ul>
+
+<p> Odkaz na seznam  aut:
+    {% url 'seznamaut' as the_url %}
+    {% if the_url %}
+    <a href="{{ the_url }}">Zde >></a>
+    {% endif %}
+</p>
+
+<p> Odkaz na seznam  zákazníků:
+    {% url 'seznam_zakazniku' as the_url %}
+    {% if the_url %}
+    <a href="{{ the_url }}">Zde >>></a>
+    {% endif %}
+</p>
+
+{% endblock %}
+
